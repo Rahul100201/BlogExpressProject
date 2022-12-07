@@ -1,0 +1,51 @@
+<%- include('../front/header.ejs') %>
+
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/blogs" >Blogs</a></li>
+                            <li><a href="/admin/about_content" class="active">About</a></li>
+                            <li><a href="/admin/category">Category</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>About  Details</h1>
+                            </div>
+                            <div class="dash-nav">
+                                
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>#ID</th>
+                                <th>Title</th>
+                                <th>Contentn</th>
+                            </tr>
+                                <tr>
+                                    <td><%= viewdata._id %></td>
+                                    <td><%= viewdata.title %></td>
+                                    <td><%= viewdata.content %></td>
+                                </tr>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<%- include('../front/footer.ejs') %>

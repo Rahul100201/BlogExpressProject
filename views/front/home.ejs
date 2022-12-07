@@ -1,0 +1,33 @@
+<%- include('../front/header.ejs')%>
+<!-- <%      %> ejs santex -->
+<hr style="border-top: 2px solid grey;">
+<section class="banner">
+    <div class="banner-box">
+        <div class="intro-text">
+            <div class="intro-text-box">
+                <h1>POST YOUR BLOGS HERE</h1>
+            </div>
+        </div>
+        <img src="assets/images/header-bg.jpg" alt="banner" />
+    </div>
+    <hr style="border-top: 2px solid grey;">
+</section>
+<section class="featured-blog mtb-40">
+    <div class="container">
+        <div class="row">
+            <% d.forEach((item)=>{ %>
+            <div class="col-md-4">
+                <div class="blog-box">
+                    <img style="height: 250px; width: 350px;" src="<%= item.image.url %>" alt="blog1" />
+                    <h3><%= item.title %></h3>
+                    <p>by <span>RSGiTECH</span> on <span><%= item.createdAt.toLocaleDateString() %></span></p>
+                    <p style="text-align: justify;"><%= item.description.slice(0,110) %>..............</p>
+                    <a href="/blogdetail/<%= item._id %>" class="btn btn-danger">Read more...</a>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</section>
+
+<%- include('../front/footer.ejs')%>

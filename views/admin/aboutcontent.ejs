@@ -1,0 +1,46 @@
+<%- include('../front/header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">       
+                    <%- include('../admin/adminsidebar.ejs') %>
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1>About Content Display</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a href="/admin/addaboutcontent" class="btn btn-success">Add Post</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th>#ID</th>
+                                <th>Title</th>  
+                                <th>Action</th>
+                            </tr>
+                            <%  d.forEach((i)=>{ %>
+                                <tr>
+                                    <td><%= i._id %></td>
+                                    <td><%= i.title %></td>
+                                    <td>
+                                        <a href="/admin/view_content/<%= i._id %>" class="btn btn-success btn-sm" >View</a>
+                                        <a href="/admin/blog_edit/<%= i._id %>" class="btn btn-info btn-sm">Edit</a>
+                                        <a href="/admin/blog_delete/<%= i._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                          
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../front/footer.ejs') %>

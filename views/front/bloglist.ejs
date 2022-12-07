@@ -1,0 +1,20 @@
+<%- include('../front/header.ejs')%>
+<section class="blog-list mtb-40">
+    <div class="container">
+      <h1>Blogs</h1>
+      <div class="row">
+        <% d.forEach((item)=>{ %>
+          <div class="col-md-4">
+              <div class="blog-box">
+                  <img style="height: 250px; width: 350px;" src="<%= item.image.url %>" alt="blog1" />
+                  <h3><%= item.title %></h3>
+                  <p>by <span>RSGiTECH</span> on <span><%= item.createdAt.toLocaleDateString() %></span></p>
+                  <p style="text-align: justify;"><%= item.description.slice(0,110) %>..............</p>
+                  <a href="/blogdetail/<%= item._id %>" class="btn btn-danger">Read more...</a>
+              </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+  </section>
+<%- include('../front/footer.ejs')%>

@@ -1,0 +1,13 @@
+<%- include('../front/header.ejs')%>
+<section class="cmspage mtb-40">
+    <div class="container">
+      <h1>About</h1>
+      <%  d.forEach((i)=>{ %>
+      <div class="page-desc"> 
+        <p><%= i.content %></p>
+      </div>
+      <% }) %>
+    </div>
+</section>
+
+<%- include('../front/footer.ejs')%>
