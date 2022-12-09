@@ -9,7 +9,7 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
-const api=require('./routes/API')
+const api=require('./routes/api')
 
 //message showing 
 app.use(session({
